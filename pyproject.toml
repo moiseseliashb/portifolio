@@ -1,0 +1,9 @@
+[tool.vercel]
+entrypoint = "run:app"
+
+[project]
+name = "portifolio"
+version = "0.1.0"
+dependencies = [
+    "Flask",
+]
