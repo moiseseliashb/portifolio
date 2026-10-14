@@ -1,1 +1,399 @@
 @import "tailwindcss";
+
+@theme {
+    --color-accent: #5170ff;
+    --color-surface: #12151a;
+    --color-muted: #969da8;
+
+    --font-sans: "Inter", "Segoe UI", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+body {
+    font-family: var(--font-sans);
+}
+
+::selection {
+    color: #0b0d10;
+    background: #c4f36b;
+}
+
+.grid-background {
+    background-image:
+        linear-gradient(rgb(255 255 255 / 3%) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(255 255 255 / 3%) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: linear-gradient(to bottom, black, transparent 90%);
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        opacity 700ms ease,
+        transform 700ms cubic-bezier(.2, .7, .2, 1);
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-glow {
+    animation: glow 8s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        transform: translate3d(-2%, -2%, 0) scale(.96);
+        opacity: .45;
+    }
+
+    to {
+        transform: translate3d(3%, 2%, 0) scale(1.08);
+        opacity: .8;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+
+
+.hexagon-grid {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='62' viewBox='0 0 72 62'%3E%3Cg fill='none' stroke='%23c4f36b' stroke-opacity='.15' stroke-width='.7'%3E%3Cpath d='M18 1 36 11.5v21L18 43 0 32.5v-21Z'/%3E%3Cpath d='M54 32 72 42.5v21L54 74 36 63.5v-21Z'/%3E%3Cpath d='M54 -10 72 .5v21L54 32 36 21.5v-21Z'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 72px 62px;
+    mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        black 60%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        black 60%,
+        transparent 100%
+    );
+}
+
+.hero-hexagons {
+    opacity: .75;
+    mask-image: radial-gradient(
+        ellipse at center,
+        black 15%,
+        rgb(0 0 0 / 75%) 55%,
+        transparent 100%
+    );
+    -webkit-mask-image: radial-gradient(
+        ellipse at center,
+        black 15%,
+        rgb(0 0 0 / 75%) 55%,
+        transparent 100%
+    );
+}
+
+/* Skill Bars */
+.skill-bar {
+    height: 7px;
+    overflow: hidden;
+    border-radius: 9999px;
+    background: rgb(255 255 255 / 10%);
+}
+
+.skill-progress {
+    width: var(--skill-width);
+    height: 100%;
+    border-radius: inherit;
+    background: var(--skill-color);
+    transform-origin: left;
+    animation: skill-grow 1s ease-out both;
+}
+
+
+/* Barras de competências */
+
+.skill-progress {
+    width: var(--skill-width);
+    background-color: var(--skill-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: width 700ms ease;
+}
+
+/* A barra anima quando a secção fica visível */
+.reveal.is-visible .skill-progress {
+    animation: skill-grow 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes skill-grow {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/* Respeita as preferências de movimento do visitante */
+@media (prefers-reduced-motion: reduce) {
+    .skill-progress {
+        transform: none;
+        animation: none !important;
+    }
+
+    .reveal.is-visible .skill-progress {
+        transform: none;
+    }
+}
+
+/* Estilos para os projetos */
+
+/* ========================================
+   PROJECTS — VISUAL DESIGN
+======================================== */
+
+.project-card {
+    box-shadow: 0 0 0 transparent;
+}
+
+.project-card:hover {
+    box-shadow: 0 16px 50px rgb(0 0 0 / 18%);
+}
+
+/* Área visual de cada projeto */
+
+.project-visual {
+    isolation: isolate;
+    background-color: #12151a;
+}
+
+.project-visual::before {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    content: "";
+    opacity: 0.8;
+    background-image:
+        linear-gradient(
+            rgb(255 255 255 / 3%) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgb(255 255 255 / 3%) 1px,
+            transparent 1px
+        );
+    background-size: 32px 32px;
+}
+
+.project-visual-glow {
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    filter: blur(65px);
+    opacity: 0.18;
+    transition: opacity 400ms ease, transform 400ms ease;
+}
+
+.project-card:hover .project-visual-glow {
+    opacity: 0.35;
+    transform: scale(1.15);
+}
+
+/* Identidade visual por projeto */
+
+.project-visual--the-mazze {
+    background:
+        radial-gradient(
+            ellipse at center,
+            #202d27 0%,
+            #101612 45%,
+            #0b0d10 100%
+        );
+}
+
+.project-visual--the-mazze .project-visual-glow {
+    background: #c4f36b;
+}
+
+.project-visual--infokaizen {
+    background:
+        radial-gradient(
+            ellipse at top right,
+            #1b302a 0%,
+            #121a19 40%,
+            #0b0d10 100%
+        );
+}
+
+.project-visual--infokaizen .project-visual-glow {
+    background: #c4f36b;
+}
+
+.project-visual--ikbet {
+    background:
+        radial-gradient(
+            ellipse at center,
+            #172943 0%,
+            #101722 45%,
+            #0b0d10 100%
+        );
+}
+
+.project-visual--ikbet .project-visual-glow {
+    background: #3b82f6;
+}
+
+.project-visual--maquina-do-tempo {
+    background:
+        radial-gradient(
+            ellipse at center,
+            #29213b 0%,
+            #17131f 45%,
+            #0b0d10 100%
+        );
+}
+
+.project-visual--maquina-do-tempo .project-visual-glow {
+    background: #a78bfa;
+}
+
+/* Símbolo central */
+
+.project-visual-symbol {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 700;
+    letter-spacing: -0.08em;
+    color: rgb(255 255 255 / 80%);
+    text-shadow: 0 0 40px rgb(196 243 107 / 10%);
+    transition: transform 400ms ease;
+}
+
+.project-card:hover .project-visual-symbol {
+    transform: scale(1.08);
+}
+
+/* Tecnologias */
+
+.project-tag {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgb(255 255 255 / 10%);
+    border-radius: 9999px;
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    color: #b7bec8;
+    background: rgb(255 255 255 / 3%);
+}
+
+/* Estado do projeto */
+
+.project-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border-radius: 9999px;
+    padding: 5px 9px;
+    font-size: 0.7rem;
+    line-height: 1rem;
+    white-space: nowrap;
+}
+
+.project-status--development {
+    color: #c4f36b;
+    background: rgb(196 243 107 / 8%);
+}
+
+.project-status--planning {
+    color: #b7bec8;
+    background: rgb(255 255 255 / 6%);
+}
+
+.project-status-dot {
+    width: 6px;
+    height: 6px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+/* Acessibilidade */
+
+@media (prefers-reduced-motion: reduce) {
+    .project-card,
+    .project-visual-glow,
+    .project-visual-symbol {
+        transition: none;
+    }
+
+    .project-card:hover {
+        transform: none;
+    }
+}
+
+
+/* Percurso: linha temporal */
+
+.journey-step {
+    position: relative;
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 20px;
+}
+
+.journey-step:not(:last-child)::after {
+    position: absolute;
+    top: 48px;
+    bottom: -48px;
+    left: 21px;
+    width: 1px;
+    background: linear-gradient(
+        to bottom,
+        rgb(196 243 107 / 40%),
+        rgb(255 255 255 / 8%)
+    );
+    content: "";
+}
+
+.journey-marker {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(196 243 107 / 35%);
+    border-radius: 50%;
+    background: #0b0d10;
+    color: #c4f36b;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .journey-step,
+    .journey-marker {
+        scroll-behavior: auto;
+    }
+}

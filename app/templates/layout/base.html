@@ -4,21 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b0d10">
+    <meta name="description"
+          content="Portfólio pessoal de desenvolvimento de software e projetos tecnológicos.">
 
-    <title>{% block title %}Portfólio{% endblock %}</title>
+    <title>{% block title %}Portfólio | Desenvolvedor{% endblock %}</title>
 
     <link
         rel="stylesheet"
         href="{{ url_for('static', filename='css/output.css') }}"
     >
-</head>
-<body class="min-h-screen bg-[#0B0D10] text-white antialiased">
-
-    {% block content %}{% endblock %}
 
     <script
         src="{{ url_for('static', filename='js/main.js') }}"
         defer
     ></script>
+</head>
+
+<body class="min-h-screen bg-[#0b0d10] text-white antialiased">
+    {% block content %}{% endblock %}
 </body>
 </html>

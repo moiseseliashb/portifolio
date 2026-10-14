@@ -1,29 +1,944 @@
 {% extends "layout/base.html" %}
 
-{% block title %}Início | Portfólio{% endblock %}
+{% block title %}Início | O meu portfólio{% endblock %}
 
 {% block content %}
-<main class="flex min-h-screen items-center justify-center px-6">
-    <section class="max-w-3xl text-center">
-        <p class="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-lime-400">
-            Portfólio pessoal
-        </p>
 
-        <h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
-            Olá, mundo!
-        </h1>
-
-        <p class="mt-6 text-lg text-gray-400">
-            O meu próximo projeto está a nascer.
-        </p>
-
-        <a
-            href="#projetos"
-            class="mt-8 inline-flex rounded-full bg-lime-400 px-6 py-3
-                   font-semibold text-black transition hover:bg-lime-300"
-        >
-            Explorar projetos
+<header class="relative z-20 border-b border-white/[0.07]">
+    <nav
+        class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10"
+        aria-label="Navegação principal"
+    >
+        <a href="#inicio" class="text-lg font-bold tracking-tight">
+            ChristianDev<span class="text-accent">.</span>
         </a>
+
+        <button
+            id="menu-toggle"
+            type="button"
+            class="rounded-lg border border-white/10 px-3 py-2 text-sm md:hidden"
+            aria-expanded="false"
+            aria-controls="nav-links"
+        >
+            Menu
+        </button>
+
+        <div
+            id="nav-links"
+            class="hidden absolute left-0 right-0 top-full flex-col gap-5
+                   border-b border-white/10 bg-[#0b0d10] px-6 py-6
+                   md:static md:flex md:flex-row md:items-center
+                   md:border-0 md:bg-transparent md:p-0"
+        >
+            <a class="text-sm text-gray-400 transition hover:text-white"
+               href="#sobre">Sobre</a>
+            <a class="text-sm text-gray-400 transition hover:text-white"
+               href="#competencias">Competências</a>
+            <a class="text-sm text-gray-400 transition hover:text-white"
+               href="#projetos">Projetos</a>
+            <a class="text-sm text-gray-400 transition hover:text-white"
+               href="#percurso">Percurso</a>
+            
+
+            <a
+                href="#contacto"
+                class="rounded-full bg-accent px-5 py-2.5 text-sm
+                       font-semibold text-[#0b0d10] transition
+                       hover:bg-white"
+            >
+                Vamos conversar ↗
+            </a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section
+        id="inicio"
+        class="relative isolate flex min-h-[calc(100svh-73px)]
+               items-center overflow-hidden"
+    >
+        <div
+            class="hexagon-grid hero-hexagons pointer-events-none absolute inset-0 -z-10"
+            aria-hidden="true">
+        </div>
+
+        <div
+            class="hero-glow pointer-events-none absolute -right-40 top-10
+                   -z-10 h-96 w-96 rounded-full bg-lime-400/10 blur-[110px]
+                   md:right-0 md:top-20 md:h-[32rem] md:w-[32rem]"
+        ></div>
+
+        <div
+            class="mx-auto grid w-full max-w-7xl items-center gap-16
+                   px-6 py-20 md:py-28 lg:grid-cols-[1.2fr_.8fr]
+                   lg:gap-10 lg:px-10"
+        >
+            <div class="reveal">
+                <div
+                    class="mb-8 inline-flex items-center gap-3 rounded-full
+                           border border-white/10 bg-white/[0.03]
+                           px-4 py-2"
+                >
+                    <span class="relative flex h-2 w-2">
+                        <span class="absolute inline-flex h-full w-full
+                                     animate-ping rounded-full bg-accent opacity-50">
+                        </span>
+                        <span class="relative inline-flex h-2 w-2
+                                     rounded-full bg-accent">
+                        </span>
+                    </span>
+
+                    <span class="text-xs tracking-wide text-gray-300">
+                        A construir o próximo capítulo
+                    </span>
+                </div>
+
+                <p class="mb-5 text-sm font-medium tracking-[0.25em]
+                          text-accent uppercase">
+                    Olá, mundo. Eu sou Moisés Elias
+                </p>
+
+                <h1 class="max-w-3xl text-5xl font-bold leading-[1.05]
+                           tracking-[-0.055em] sm:text-6xl
+                           md:text-7xl xl:text-8xl">
+                    Ideias em mente.
+                    <span class="mt-2 block text-gray-500">
+                        Código em ação<span class="text-accent">.</span>
+                    </span>
+                </h1>
+
+                <p class="mt-8 max-w-xl text-base leading-8 text-gray-400 md:text-lg">
+                    Sou um desenvolvedor em evolução, apaixonado por tecnologia,
+                    pela resolução de problemas e pela criação de soluções
+                    que transformam ideias em realidade.
+                </p>
+
+                <div class="mt-10 flex flex-wrap items-center gap-4">
+                    <a
+                        href="#projetos"
+                        class="inline-flex items-center gap-3 rounded-full
+                               bg-accent px-6 py-3.5 font-semibold
+                               text-[#0b0d10] transition
+                               hover:-translate-y-1 hover:bg-white"
+                    >
+                        Explorar projetos
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                    <a
+                        href="#sobre"
+                        class="rounded-full border border-white/15
+                               px-6 py-3.5 font-medium text-gray-300
+                               transition hover:border-white/40 hover:text-white"
+                    >
+                        Conhecer a minha história
+                    </a>
+                </div>
+
+                <div class="mt-14 flex items-center gap-4 text-sm text-gray-500">
+                    <span class="h-px w-10 bg-accent/60"></span>
+                    Curiosidade. Consistência. Construção.
+                </div>
+            </div>
+
+            <div class="reveal relative mx-auto w-full max-w-md"
+                 aria-label="Ilustração abstrata de desenvolvimento de software">
+
+                <div class="absolute -inset-6 rounded-full
+                            bg-lime-300/[0.04] blur-3xl"></div>
+
+                <div class="relative rotate-[-3deg] rounded-2xl
+                            border border-white/10 bg-[#111419]/95
+                            p-5 shadow-2xl shadow-black/40 sm:p-7">
+
+                    <div class="flex items-center justify-between
+                                border-b border-white/[0.08] pb-5">
+                        <div class="flex gap-2" aria-hidden="true">
+                            <span class="h-2.5 w-2.5 rounded-full bg-red-400/80"></span>
+                            <span class="h-2.5 w-2.5 rounded-full bg-yellow-400/80"></span>
+                            <span class="h-2.5 w-2.5 rounded-full bg-accent/80"></span>
+                        </div>
+
+                        <span class="font-mono text-xs text-gray-500">
+                            developer.py
+                        </span>
+                    </div>
+
+                    <div class="space-y-5 py-8 font-mono text-sm leading-7">
+                        <p class="text-gray-600">
+                            <span class="text-purple-400">class</span>
+                            <span class="text-accent"> Developer</span><span class="text-gray-400">:</span>
+                        </p>
+
+                        <div class="pl-5">
+                            <p class="text-gray-500"># O processo nunca termina</p>
+                            <p>
+                                <span class="text-sky-300">mindset</span>
+                                <span class="text-gray-400">=</span>
+                                <span class="text-amber-200">"always_learning"</span>
+                            </p>
+                            <p>
+                                <span class="text-sky-300">build</span>
+                                <span class="text-gray-400">=</span>
+                                <span class="text-amber-200">"ideas_to_reality"</span>
+                            </p>
+                            <p>
+                                <span class="text-sky-300">coffee</span>
+                                <span class="text-gray-400">=</span>
+                                <span class="text-orange-300">True</span>
+                            </p>
+                        </div>
+
+                        <div class="mt-8 rounded-lg border border-accent/15
+                                    bg-accent/[0.04] p-4">
+                            <p class="text-xs text-gray-500">CURRENT STATUS</p>
+                            <p class="mt-1 text-accent">
+                                Building something meaningful<span
+                                    class="ml-1 inline-block h-4 w-1
+                                           animate-pulse bg-accent align-middle"
+                                    aria-hidden="true"></span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between
+                                border-t border-white/[0.08] pt-4">
+                        <span class="text-xs text-gray-500">Made with intention</span>
+                        <span class="text-xs text-accent">v.01</span>
+                    </div>
+                </div>
+
+                <div class="absolute -bottom-7 -left-5 rounded-xl
+                            border border-white/10 bg-[#171b20] px-4 py-3
+                            shadow-xl sm:-left-9">
+                    <p class="text-xs text-gray-500">PHILOSOPHY</p>
+                    <p class="mt-1 text-sm font-medium">Learn → Build → Improve</p>
+                </div>
+            </div>
+        </div>
     </section>
+
+    
+    <section id="sobre" class="relative isolate overflow-hidden border-t border-white/10 px-6 py-24 sm:px-10 lg:px-16">
+        <div class="hexagon-grid pointer-events-none absolute inset-0 -z-10 opacity-40"
+            aria-hidden="true"></div>
+
+        <div class="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+
+            <!-- Identidade -->
+            <div class="reveal">
+                <p class="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-accent">
+                    01 / Sobre mim
+                </p>
+
+                <h2 class="text-3xl font-semibold tracking-tight sm:text-5xl">
+                    Mais do que escrever código,
+                    <span class="text-accent">procuro compreender.</span>
+                </h2>
+
+                <div class="mt-8 border-l-2 border-accent pl-5">
+                    <p class="text-xl font-medium leading-relaxed text-white">
+                        “Faça simples, mas faça bem!”
+                    </p>
+                    <p class="mt-2 text-sm text-muted">
+                        A minha filosofia de desenvolvimento.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Apresentação -->
+            <div class="reveal space-y-6 text-base leading-8 text-muted">
+                <p>
+                    Sou estudante de Engenharia Informática e alguém movido
+                    pela curiosidade de compreender como a tecnologia funciona
+                    e como pode ser utilizada para resolver problemas reais.
+                </p>
+
+                <p>
+                    Interesso-me especialmente pelo raciocínio lógico, pela
+                    resolução de problemas e pela construção de sistemas.
+                    Gosto de explorar diferentes áreas da programação, testar
+                    ideias e aprender através da prática.
+                </p>
+
+                <p>
+                    Acredito que compreender os fundamentos é tão importante
+                    como dominar as ferramentas. Por isso, procuro aprender
+                    com o legado dos pioneiros da informática, desenvolvendo
+                    gradualmente as competências necessárias para criar as
+                    minhas próprias soluções.
+                </p>
+
+                <p>
+                    Os meus projetos são parte desse percurso: espaços para
+                    experimentar, enfrentar desafios técnicos e transformar
+                    ideias em algo concreto.
+                </p>
+
+                <p class="font-medium text-white">
+                    Não procuro complicar o que pode ser simples.
+                    Procuro compreender o problema e resolvê-lo bem.
+                </p>
+            </div>
+        </div>
+    </section>
+            
+    
+    <section
+        id="competencias"
+        class="relative isolate overflow-hidden bg-surface py-24 sm:py-32"
+    >
+        <!-- Fundo hexagonal -->
+        <div
+            class="hexagon-grid pointer-events-none absolute inset-0 -z-10"
+            aria-hidden="true"
+        ></div>
+
+        <div class="mx-auto max-w-6xl px-6 lg:px-8">
+
+            <!-- Cabeçalho -->
+            <div class="reveal mb-16 max-w-2xl">
+                <p
+                    class="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-accent"
+                >
+                    O que estou a aprender
+                </p>
+
+                <h2 class="text-3xl font-bold tracking-tight sm:text-5xl">
+                    Competências que evoluem comigo.
+                </h2>
+
+                <p class="mt-6 text-base leading-7 text-muted sm:text-lg">
+                    Conhecimentos desenvolvidos através do estudo, da
+                    experimentação e da construção de projetos práticos.
+                </p>
+            </div>
+
+            <!-- Categorias e competências -->
+            <div class="grid gap-x-16 gap-y-14 md:grid-cols-2">
+
+                {% for category, items in skills.items() %}
+                    <div class="reveal min-w-0">
+
+                        <div class="mb-7 flex items-center gap-3">
+                            <span
+                                class="h-5 w-1 rounded-full bg-accent"
+                                aria-hidden="true"
+                            ></span>
+
+                            <h3 class="text-xl font-semibold tracking-tight">
+                                {{ category }}
+                            </h3>
+                        </div>
+
+                        <div class="space-y-6">
+                            {% for skill in items %}
+                                <div class="skill-item">
+
+                                    <!-- Nome e nível -->
+                                    <div
+                                        class="mb-2 flex flex-wrap items-center justify-between gap-x-4 gap-y-1"
+                                    >
+                                        <span class="text-sm font-medium text-white">
+                                            {{ skill.name }}
+                                        </span>
+
+                                        <span
+                                            class="text-xs font-medium text-muted"
+                                        >
+                                            {{ skill.level }}
+                                        </span>
+                                    </div>
+
+                                    <!-- Barra de conhecimento -->
+                                    <div
+                                        class="h-1.5 overflow-hidden rounded-full bg-white/10"
+                                    >
+                                        <div
+                                            class="skill-progress h-full rounded-full"
+                                            style="--skill-width: {{ skill.percentage }}%; --skill-color: {{ skill.color }};"
+                                            role="progressbar"
+                                            aria-label="{{ skill.name }} — {{ skill.level }}"
+                                            aria-valuemin="0"
+                                            aria-valuemax="100"
+                                            aria-valuenow="{{ skill.percentage }}"
+                                        ></div>
+                                    </div>
+
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+
+            <!-- Nota final -->
+            <p class="reveal mt-12 text-xs leading-6 text-muted">
+                Os níveis representam a minha autoavaliação atual e evoluem
+                com a prática e a aprendizagem.
+            </p>
+
+        </div>
+    </section>
+        
+    <section
+        id="projetos"
+        class="relative isolate overflow-hidden bg-[#0b0d10] py-24 sm:py-32"
+    >
+        <!-- Fundo hexagonal -->
+        <div
+            class="hexagon-grid pointer-events-none absolute inset-0 -z-10"
+            aria-hidden="true"
+        ></div>
+
+        <div class="mx-auto max-w-6xl px-6 lg:px-8">
+
+            <!-- Cabeçalho -->
+            <div class="reveal mb-14 max-w-2xl">
+                <p
+                    class="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-accent"
+                >
+                    O que estou a construir
+                </p>
+
+                <h2 class="text-3xl font-bold tracking-tight sm:text-5xl">
+                    Ideias que ganham forma.
+                </h2>
+
+                <p class="mt-6 text-base leading-7 text-muted sm:text-lg">
+                    Cada projeto é uma oportunidade para aprender,
+                    experimentar e transformar problemas em soluções.
+                </p>
+            </div>
+
+            <!-- Grelha de projetos -->
+            <div class="grid gap-6 md:grid-cols-2">
+
+                {% for project in projects %}
+                    <article
+                        class="project-card reveal group min-w-0 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] transition duration-300 hover:-translate-y-1 hover:border-accent/40"
+                    >
+
+                        <!-- Área visual -->
+                        <div
+                            class="project-visual project-visual--{{ project.slug }} relative flex aspect-[16/9] items-center justify-center overflow-hidden"
+                            aria-hidden="true"
+                        >
+                            <div class="project-visual-glow"></div>
+
+                            <span class="project-visual-symbol">
+                                {{ project.symbol }}
+                            </span>
+
+                            <span
+                                class="absolute bottom-4 left-5 text-xs font-medium uppercase tracking-[0.2em] text-white/50"
+                            >
+                                {{ project.category }}
+                            </span>
+
+                            <span
+                                class="absolute right-5 top-4 text-xs text-white/40"
+                            >
+                                {{ "%02d"|format(loop.index) }}
+                            </span>
+                        </div>
+
+                        <!-- Conteúdo -->
+                        <div class="p-6 sm:p-7">
+
+                            <div
+                                class="mb-4 flex flex-wrap items-center justify-between gap-3"
+                            >
+                                <h3
+                                    class="text-xl font-semibold tracking-tight transition-colors group-hover:text-accent sm:text-2xl"
+                                >
+                                    {{ project.name }}
+                                </h3>
+
+                                <span
+                                    class="project-status {% if project.status == 'Em desenvolvimento' %}project-status--development{% else %}project-status--planning{% endif %}"
+                                >
+                                    <span class="project-status-dot"></span>
+                                    {{ project.status }}
+                                </span>
+                            </div>
+
+                            <p class="min-h-14 text-sm leading-6 text-muted">
+                                {{ project.description }}
+                            </p>
+
+                            <!-- Tecnologias -->
+                            {% if project.technologies %}
+                                <div class="mt-5 flex flex-wrap gap-2">
+                                    {% for technology in project.technologies %}
+                                        <span class="project-tag">
+                                            {{ technology }}
+                                        </span>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+
+                            <!-- Links reais, quando existirem -->
+                            {% if project.url or project.github %}
+                                <div class="mt-6 flex flex-wrap gap-5 border-t border-white/10 pt-5">
+
+                                    {% if project.url %}
+                                        <a
+                                            href="{{ project.url }}"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="inline-flex items-center gap-2 text-sm font-medium text-accent transition hover:text-white"
+                                        >
+                                            Ver projeto
+                                            <span aria-hidden="true">↗</span>
+                                        </a>
+                                    {% endif %}
+
+                                    {% if project.github %}
+                                        <a
+                                            href="{{ project.github }}"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="inline-flex items-center gap-2 text-sm font-medium text-muted transition hover:text-white"
+                                        >
+                                            Código-fonte
+                                            <span aria-hidden="true">↗</span>
+                                        </a>
+                                    {% endif %}
+
+                                </div>
+                            {% endif %}
+
+                        </div>
+                    </article>
+                {% endfor %}
+
+            </div>
+
+            <!-- Nota de transparência -->
+            <p class="reveal mt-10 text-xs leading-6 text-muted">
+                Projetos apresentados em diferentes fases de desenvolvimento.
+                As funcionalidades e os links serão atualizados à medida que evoluírem.
+            </p>
+
+        </div>
+    </section>
+
+    <section
+        id="percurso"
+        class="relative isolate overflow-hidden bg-[#0b0d10] py-24 sm:py-32"
+    >
+        <!-- Fundo hexagonal -->
+        <div
+            class="hexagon-grid pointer-events-none absolute inset-0 -z-10"
+            aria-hidden="true"
+        ></div>
+
+        <div class="mx-auto max-w-6xl px-6 lg:px-8">
+
+            <!-- Cabeçalho -->
+            <div class="reveal mb-16 max-w-2xl">
+                <p
+                    class="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-accent"
+                >
+                    O meu percurso
+                </p>
+
+                <h2 class="text-3xl font-bold tracking-tight sm:text-5xl">
+                    A curiosidade foi o início.
+                    <span class="text-accent">A criação é o caminho.</span>
+                </h2>
+
+                <p class="mt-6 text-base leading-7 text-muted sm:text-lg">
+                    Antes de querer escrever código, queria compreender
+                    o que existia por detrás do ecrã.
+                </p>
+            </div>
+
+            <!-- História e visão -->
+            <div class="grid gap-16 lg:grid-cols-[1.3fr_0.7fr] lg:gap-24">
+
+                <!-- Narrativa -->
+                <div class="reveal">
+
+                    <div class="relative space-y-12">
+
+                        <!-- Etapa 1 -->
+                        <article class="journey-step">
+                            <span class="journey-marker" aria-hidden="true">
+                                01
+                            </span>
+
+                            <div>
+                                <p class="mb-2 text-xs font-medium uppercase tracking-[0.2em] text-accent">
+                                    O início
+                                </p>
+
+                                <h3 class="mb-4 text-xl font-semibold sm:text-2xl">
+                                    Tudo começou com uma pergunta.
+                                </h3>
+
+                                <p class="text-sm leading-7 text-muted sm:text-base">
+                                    Quando era pequeno, gostava de observar
+                                    o meu irmão a usar o computador e a
+                                    conversar no Facebook. Ficava fascinado
+                                    com aquilo que via e perguntava-me como
+                                    tudo aquilo era feito.
+                                </p>
+
+                                <p class="mt-4 text-sm leading-7 text-muted sm:text-base">
+                                    Desde cedo, tive contacto com computadores
+                                    e gostava de explorar os telemóveis,
+                                    descobrir como funcionavam e resolver
+                                    pequenos problemas técnicos. A curiosidade
+                                    já existia, mesmo antes de eu conhecer
+                                    verdadeiramente a programação.
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- Etapa 2 -->
+                        <article class="journey-step">
+                            <span class="journey-marker" aria-hidden="true">
+                                02
+                            </span>
+
+                            <div>
+                                <p class="mb-2 text-xs font-medium uppercase tracking-[0.2em] text-accent">
+                                    A descoberta
+                                </p>
+
+                                <h3 class="mb-4 text-xl font-semibold sm:text-2xl">
+                                    Pequenas ideias. Grandes possibilidades.
+                                </h3>
+
+                                <p class="text-sm leading-7 text-muted sm:text-base">
+                                    Hoje, como estudante de Engenharia
+                                    Informática, o que mais me fascina na
+                                    programação é a possibilidade de construir
+                                    coisas extraordinárias a partir de ideias
+                                    simples.
+                                </p>
+
+                                <p class="mt-4 text-sm leading-7 text-muted sm:text-base">
+                                    Fascina-me pensar que palavras, instruções
+                                    e linhas de código podem dar origem a
+                                    universos inteiros e transformar a forma
+                                    como vivemos. É essa ligação entre lógica,
+                                    criatividade e impacto real que me motiva
+                                    a continuar a aprender.
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- Etapa 3 -->
+                        <article class="journey-step">
+                            <span class="journey-marker" aria-hidden="true">
+                                03
+                            </span>
+
+                            <div>
+                                <p class="mb-2 text-xs font-medium uppercase tracking-[0.2em] text-accent">
+                                    O caminho
+                                </p>
+
+                                <h3 class="mb-4 text-xl font-semibold sm:text-2xl">
+                                    Aprender. Construir. Evoluir.
+                                </h3>
+
+                                <p class="text-sm leading-7 text-muted sm:text-base">
+                                    Vejo cada projeto como uma oportunidade
+                                    para testar ideias, desenvolver o meu
+                                    raciocínio e transformar conhecimento
+                                    em algo concreto.
+                                </p>
+
+                                <p class="mt-4 text-sm leading-7 text-muted sm:text-base">
+                                    Ainda tenho muito para aprender, mas quero
+                                    continuar a construir, experimentar e
+                                    aperfeiçoar a minha forma de resolver
+                                    problemas — sempre com disciplina,
+                                    criatividade e pensamento lógico.
+                                </p>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+                <!-- Visão do futuro -->
+                <aside class="reveal lg:pt-4">
+
+                    <div class="border-l-2 border-accent/40 pl-6 sm:pl-8">
+
+                        <p class="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-accent">
+                            Daqui a cinco anos
+                        </p>
+
+                        <h3 class="text-2xl font-bold leading-tight sm:text-3xl">
+                            Quero construir mais do que software.
+                        </h3>
+
+                        <p class="mt-6 text-sm leading-7 text-muted sm:text-base">
+                            Imagino-me no escritório da minha própria empresa,
+                            a Info.AO, a acompanhar uma equipa dedicada a
+                            resolver problemas reais e a desenvolver soluções
+                            que contribuam para o desenvolvimento do nosso país.
+                        </p>
+
+                        <p class="mt-4 text-sm leading-7 text-muted sm:text-base">
+                            Não quero apenas escrever código. Quero participar
+                            na criação de soluções úteis, colaborar com pessoas
+                            talentosas e transformar ideias em projetos com
+                            impacto.
+                        </p>
+
+                        <div class="mt-8 space-y-4">
+                            <div class="flex items-center gap-3">
+                                <span
+                                    class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent/30 text-accent"
+                                    aria-hidden="true"
+                                >
+                                    <span class="text-sm">01</span>
+                                </span>
+
+                                <span class="text-sm font-medium">
+                                    Disciplina para continuar
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <span
+                                    class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent/30 text-accent"
+                                    aria-hidden="true"
+                                >
+                                    <span class="text-sm">02</span>
+                                </span>
+
+                                <span class="text-sm font-medium">
+                                    Criatividade para imaginar
+                                </span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <span
+                                    class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent/30 text-accent"
+                                    aria-hidden="true"
+                                >
+                                    <span class="text-sm">03</span>
+                                </span>
+
+                                <span class="text-sm font-medium">
+                                    Lógica para resolver
+                                </span>
+                            </div>
+                        </div>
+
+                        <blockquote class="mt-10 border-t border-white/10 pt-6">
+                            <p class="text-xl font-semibold leading-relaxed">
+                                “Faça simples,
+                                <span class="text-accent">mas faça bem!</span>
+                            </p>
+                        </blockquote>
+
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </section>
+
+    <section
+        id="contacto"
+        class="relative overflow-hidden bg-[#0b0d10] py-24 sm:py-32"
+    >
+        <div
+            class="pointer-events-none absolute inset-0"
+            aria-hidden="true"
+        >
+            <div class="hero-glow absolute left-1/2 top-0 -translate-x-1/2"></div>
+        </div>
+
+        <div class="relative mx-auto max-w-5xl px-6 lg:px-8">
+            <div class="reveal mx-auto max-w-2xl text-center">
+                <p class="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-accent">
+                    Contacto
+                </p>
+
+                <h2 class="text-3xl font-bold tracking-tight sm:text-5xl">
+                    Vamos transformar ideias
+                    <span class="text-accent">em soluções?</span>
+                </h2>
+
+                <p class="mt-6 text-base leading-7 text-muted sm:text-lg">
+                    Estou aberto a conversas, oportunidades de aprendizagem,
+                    colaboração em projetos e desafios que me permitam crescer
+                    como desenvolvedor.
+                </p>
+
+                <p class="mt-4 text-sm leading-7 text-muted">
+                    Tens uma ideia ou um projeto interessante?
+                    Vamos conversar.
+                </p>
+            </div>
+
+            <div class="reveal mx-auto mt-14 grid max-w-3xl gap-4 sm:grid-cols-2">
+
+                <!-- E-mail -->
+                <a
+                    href="mailto:moiseshb777@gmail.com"
+                    class="group flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.02] p-5 transition duration-300 hover:border-accent/40 hover:bg-white/[0.04]"
+                >
+                    <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-accent/20 bg-accent/5 text-accent">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="22"
+                            height="22"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <rect x="3" y="5" width="18" height="14" rx="2"/>
+                            <path d="m3 7 9 6 9-6"/>
+                        </svg>
+                    </span>
+
+                    <span class="min-w-0">
+                        <span class="block text-sm font-semibold">E-mail</span>
+                        <span class="mt-1 block break-words text-sm text-muted group-hover:text-accent">
+                            moiseshb777@gmail.com <br>
+                            Envia-me uma mensagem
+                        </span>
+                    </span>
+                </a>
+
+                <!-- GitHub -->
+                <a
+                    href="https://github.com/moiseseliashb"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="group flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.02] p-5 transition duration-300 hover:border-accent/40 hover:bg-white/[0.04]"
+                >
+                    <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-accent/20 bg-accent/5 text-accent">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="22"
+                            height="22"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 6v-3.9a3.4 3.4 0 0 0-.9-2.7c3-.3 6.1-1.5 6.1-6.7A5.2 5.2 0 0 0 18.8 5a4.8 4.8 0 0 0-.1-3S17.5 1.7 15 3.5a13.4 13.4 0 0 0-7 0C5.5 1.7 4.3 2 4.3 2a4.8 4.8 0 0 0-.1 3 5.2 5.2 0 0 0-1.4 3.7c0 5.2 3.1 6.4 6.1 6.7a3.4 3.4 0 0 0-.9 2.7V22"/>
+                        </svg>
+                    </span>
+
+                    <span>
+                        <span class="block text-sm font-semibold">GitHub</span>
+                        <span class="mt-1 block text-sm text-muted group-hover:text-accent">
+                            Explora os meus projetos
+                        </span>
+                    </span>
+                </a>
+
+                <!-- LinkedIn -->
+                <a
+                    href="https://www.linkedin.com/in/moisés-elias-117532351?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="group flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.02] p-5 transition duration-300 hover:border-accent/40 hover:bg-white/[0.04]"
+                >
+                    <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-accent/20 bg-accent/5 text-accent">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="22"
+                            height="22"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M8 10v7m0-10v.01M12 17v-7m0 3a3 3 0 0 1 6 0v4"/>
+                        </svg>
+                    </span>
+
+                    <span>
+                        <span class="block text-sm font-semibold">LinkedIn</span>
+                        <span class="mt-1 block text-sm text-muted group-hover:text-accent">
+                            Liga-te à minha rede
+                        </span>
+                    </span>
+                </a>
+
+                <!-- WhatsApp -->
+                <a
+                    href="https://wa.me/244944343467"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="group flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.02] p-5 transition duration-300 hover:border-accent/40 hover:bg-white/[0.04]"
+                >
+                    <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-accent/20 bg-accent/5 text-accent">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="22"
+                            height="22"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-5.3A8.4 8.4 0 1 1 21 11.5Z"/>
+                            <path d="M8.5 9.5c.4 2 2 3.6 4 4"/>
+                        </svg>
+                    </span>
+
+                    <span>
+                        <span class="block text-sm font-semibold">WhatsApp</span>
+                        <span class="mt-1 block text-sm text-muted group-hover:text-accent">
+                            Fala comigo diretamente: <br>
+                            +244 944 343 467
+                        </span>
+                    </span>
+                </a>
+
+            </div>
+
+            <div class="reveal mt-12 text-center">
+                <p class="text-sm text-muted">
+                    Cada grande projeto começa com uma conversa.
+                </p>
+                <p class="mt-3 text-sm font-semibold text-accent">
+                    Faça simples, mas faça bem!
+                </p>
+            </div>
+        </div>
+    </section>
+
 </main>
+
+<footer class="border-t border-white/[0.07] px-6 py-7">
+    <p class="text-center text-xs text-gray-500">
+        © <span id="current-year">2026</span> · Construído com curiosidade e código.
+        <span class="text-accent">info.Ao</span> <br>
+        <span class="text-accent">InfoKaizen</span>
+
+    </p>
+</footer>
+
 {% endblock %}
