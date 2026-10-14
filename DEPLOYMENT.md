@@ -4,10 +4,12 @@
    repositório.
 2. Em **Settings > Environment Variables**, define `SECRET_KEY` para os
    ambientes Production, Preview e Development. Usa um valor aleatório forte;
-   não o guardes no Git.
+   não o guardes no Git. Sem essa variável, a função falha ao iniciar.
 3. Mantém `FLASK_DEBUG` ausente ou define-o como `0` em produção.
 4. Faz o deploy. A Vercel usa `pyproject.toml` para localizar `run:app` e
-   `requirements.txt` para instalar as dependências Python.
+   instalar as dependências Python, incluindo Flask e `python-dotenv`.
+5. Depois de alterar variáveis de ambiente na Vercel, cria um novo deploy
+   para que a função receba os valores.
 
 Os ficheiros servidos diretamente pela CDN da Vercel estão em
 `public/static/`. Para alterar o CSS, edita `app/static/css/input.css` e corre
